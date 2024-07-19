@@ -1,0 +1,42 @@
+POST http://localhost:3333/users
+content-type: application/json
+
+{
+    "email": "fred.kingstech@gmail.com",
+    "fullName": "asd",
+    "password": "asd",
+    "phoneNumber": "asd",
+    "role": "asd",
+    "fromWhere": "asd",
+    "companyName": "asds",
+    "companyField": "asdsa",
+    "companySize": "asdsa",
+    "department": "asdsa",
+    "url": "asdsa",
+    "color": "asdsa"
+}
+
+###
+POST http://localhost:3333/sessions
+content-type: application/json
+
+{
+    "email": "fred.kingstech@gmail.com",
+    "password": "asd"
+}
+
+###
+POST http://localhost:3333/validate
+content-type: application/json
+
+{
+    "token": "79119c6a-98fa-47f6-9111-6cc757a2edf8"
+}
+
+###
+GET http://localhost:3333/providers
+
+
+###
+GET http://localhost:3333/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMGY2ZjczMi00Yjk4LTRjZTItYmY4Mi01ZTAzMTk3N2RlZTEiLCJpYXQiOjE3MjE0MDE1MTl9.At5fU8s35BStPsKfNP599CphT-YbyooNz4zTuycVC2o

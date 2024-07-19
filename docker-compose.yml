@@ -1,0 +1,11 @@
+version : '3'
+
+services:
+  api-agidesk-pg:
+    image: 'bitnami/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=agidesk
+    ports:
+      - '5432:5432'
