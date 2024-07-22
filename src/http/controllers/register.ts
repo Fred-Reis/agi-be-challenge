@@ -1,8 +1,8 @@
-import { FastifyReply, FastifyRequest } from 'fastify'
-import { z } from 'zod'
+import { FastifyReply, FastifyRequest } from "fastify";
+import { z } from "zod";
 
-import { UserAlreadyExistsError } from '@/use-cases/errors/user-already-exists-error'
-import { makeRegisterUseCase } from '@/use-cases/factories/make-register-use-case'
+import { UserAlreadyExistsError } from "@/use-cases/errors/user-already-exists-error";
+import { makeRegisterUseCase } from "@/use-cases/factories/make-register-use-case";
 
 export async function register(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
@@ -16,10 +16,10 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     companyName: z.string(),
     companyField: z.string(),
     companySize: z.string(),
-    department: z.string(),
+    department: z.array(z.string()),
     url: z.string(),
-    color: z.string(),
-  })
+    color: z.string().optional(),
+  });
 
   const {
     email,
@@ -34,10 +34,10 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     department,
     url,
     color,
-  } = registerBodySchema.parse(request.body)
+  } = registerBodySchema.parse(request.body);
 
   try {
-    const registerUseCase = makeRegisterUseCase()
+    const registerUseCase = makeRegisterUseCase();
 
     await registerUseCase.execute({
       email,
@@ -52,16 +52,16 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
       department,
       url,
       color,
-    })
+    });
   } catch (error) {
     if (error instanceof UserAlreadyExistsError) {
       return reply.status(409).send({
         message: error.message,
-      })
+      });
     }
 
-    throw error
+    throw error;
   }
 
-  return reply.status(201).send()
+  return reply.status(201).send();
 }

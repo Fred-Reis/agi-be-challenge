@@ -35,9 +35,9 @@ model Company {
   company_name  String
   company_field String
   company_size  String
-  department    String
+  department    String[]
   url           String
-  color         String
+  color         String?
   created_at    DateTime @default(now())
 
   users User[]

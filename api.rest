@@ -2,7 +2,7 @@ POST http://localhost:3333/users
 content-type: application/json
 
 {
-    "email": "fred.kingstech@gmail.com",
+    "email": "fred.kingstech2@gmail.com",
     "fullName": "asd",
     "password": "asd",
     "phoneNumber": "asd",
@@ -11,9 +11,8 @@ content-type: application/json
     "companyName": "asds",
     "companyField": "asdsa",
     "companySize": "asdsa",
-    "department": "asdsa",
-    "url": "asdsa",
-    "color": "asdsa"
+    "department": ["asdsa"],
+    "url": "asdsa"
 }
 
 ###
