@@ -29,28 +29,28 @@
 <p align="center">
 
   <a href="#-sobre-esse-projeto">
-    <img src="https://img.shields.io/badge/Sobre_o_projeto-a5a5a5"/>
+    Sobre o projeto
   </a>&nbsp;&nbsp;
   <a href="#-arquitetura">
-    <img src="https://img.shields.io/badge/Arquitetura-a5a5a5"/>
+    Arquitetura
   </a>&nbsp;&nbsp;
   <a href="#-banco-de-dados">
-    <img src="https://img.shields.io/badge/Banco_de_dados-a5a5a5"/>
+    Banco de dados
   </a>&nbsp;&nbsp;
   <a href="#-executando-o-projeto">
-    <img src="https://img.shields.io/badge/Executando_Projeto-a5a5a5"/>
+    Executando Projeto
   </a>&nbsp;&nbsp;
   <a href="#-configurando-o-seu-banco-de-dados-localmente">
-    <img src="https://img.shields.io/badge/Configurando_o_seu_banco_de_dados_localmente-a5a5a5"/>
+    Configurando o seu banco de dados localmente
   </a>&nbsp;&nbsp;
   <a href="#-testes">
-    <img src="https://img.shields.io/badge/Testes-a5a5a5"/>
+    Testes
   </a>&nbsp;&nbsp;
   <a href="#-tecnologias-e-ferramentas">
-    <img src="https://img.shields.io/badge/Tecnologias_Ferramentas-a5a5a5"/>
+    Tecnologias Ferramentas
   </a>&nbsp;&nbsp;
   <a href="#author-frederico-reis">
-    <img src="https://img.shields.io/badge/Author-a5a5a5"/>
+    Author
   </a>
 
 </p>
