@@ -51,3 +51,9 @@ model Public_Provider {
 
   @@map("public_providers")
 }
+
+generator markdown {
+  provider = "prisma-markdown"
+  output   = "./ERD.md"
+  title    = "Sign Up Flow"
+}
