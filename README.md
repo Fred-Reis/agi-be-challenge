@@ -49,6 +49,9 @@
   <a href="#-tecnologias-e-ferramentas">
     Tecnologias Ferramentas
   </a>&nbsp;&nbsp;
+  <a href="#-roadmap">
+    Roadmap
+  </a>&nbsp;&nbsp;
   <a href="#author-frederico-reis">
     Author
   </a>
