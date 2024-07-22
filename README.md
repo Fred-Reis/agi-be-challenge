@@ -479,9 +479,6 @@ Algumas das tecnologias e ferramentas utilizadas no backend.
 - [Prisma](https://prisma.io/);
 - [JWT](https://jwt.io/);
 - EsLint;
-- Prettier;
-- Express;
-- Jest;
 
 <br/>
 
