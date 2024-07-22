@@ -57,10 +57,10 @@
 
 # 💡 Sobre esse projeto
 
-A proposta desse projeto era construir uma aplicação fullstack que permitisse ao usuário criar um usuário e enviar um email de confirmação para o usuário.
+A proposta desse projeto era construir uma aplicação fullstack que permitisse criar um usuário e enviar um email de confirmação para autenticação:
 
 Caso queira acessar o repositório com o projeto frontend acesse o link a seguir:  
- [🖥️ Repositório Frontend](https://github.com/Fred-Reis/agi-fe-challenge/?tab=readme)
+ [🖥 Repositório Frontend](https://github.com/Fred-Reis/agi-fe-challenge/?tab=readme)
 
 <br/>
 
@@ -70,7 +70,7 @@ Caso queira acessar o repositório com o projeto frontend acesse o link a seguir
 O projeto foi concebido utilizando a metodologia de DDD - Domain Driven Design, seguindo os princípios do SOLID e Design Patterns.
 Separando responsabilidades, diminuindo acoplamentos, facilitando na refatoração e estimulando o reaproveitamento do código.
 
-## 🗄️ Banco de dados
+## 💾 Banco de dados
 
 Para esse projeto foi utilizado o banco de dados PostgreSQL
 
@@ -380,6 +380,19 @@ Caso isso não aconteça execute o comando abaixo e veja o que aconteceu de erra
 $ docker logs <id do container>
 ```
 
+Agora para estabelecer a conexão por favor crie um arquivo `.env`  na raiz do seu projeto backend, seguindo o modelo a seguir:
+> Na raiz do projeto já existe um arquivo modelo chamado .env.example
+
+```.env
+NODE_ENV=dev
+PORT='3333'
+DATABASE_URL='postgresql://docker:docker@localhost:5432/agidesk?schema=public'
+NODEMAILER_PASS="token do seu email"
+NODEMAILER_USER="voce precisa adicionar uma conta @gmail.com"
+FRONTEND_URL="http://localhost:3000"
+JWT_SECRET="agidesk"
+```
+
 ## Criando migrations e populando o Banco de Dados
 
 Para a conectar o projeto com o banco de dados foi utilizado o ORM [Prisma](https://prisma.io/).
@@ -477,11 +490,12 @@ Algumas das funcionalidades que devem ser implementadas em breve
 - [ ] Criar uma rota do tipo `POST` para inserir providers externamente
 - [ ] Mudar a forma de autenticação da empresa do nome para o CNPJ, evitando assim que uma mesma empresa seja cadastrada com nomes diferentes por erro de digitação, ou que um usuário seja associado a uma empresa incorreta.
 
-
-
+<hr/>
 <br/>
 
-Se você chegou até aqui é sinal que tudo deu certo e você já pode fazer a suas requisições 😱
+<p align="center">
+  Se você chegou até aqui é sinal que tudo deu certo e você já pode fazer a suas requisições 😱
+</p>
 
 <br/>
 
