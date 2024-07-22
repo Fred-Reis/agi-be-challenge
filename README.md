@@ -59,7 +59,8 @@
 
 A proposta desse projeto era construir uma aplicação fullstack que permitisse ao usuário criar um usuário e enviar um email de confirmação para o usuário.
 
-Caso queira acessar o repositório com o projeto frontend acesse o lionk a seguir [🖥️ Repositório Frontend](https://github.com/Fred-Reis/agi-fe-challenge/?tab=readme)
+Caso queira acessar o repositório com o projeto frontend acesse o link a seguir:  
+ [🖥️ Repositório Frontend](https://github.com/Fred-Reis/agi-fe-challenge/?tab=readme)
 
 <br/>
 
