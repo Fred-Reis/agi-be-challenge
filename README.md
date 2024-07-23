@@ -472,7 +472,8 @@ Algumas das tecnologias e ferramentas utilizadas no backend.
 
 - [**NodeJS**](https://nodejs.org/en/);
 - [PostgreSql](https://postgresql.org/);
-- [Docker;](https://www.docker.com/);
+- [Nodemailer](https://nodemailer.com/);
+- [Docker](https://www.docker.com/);
 - [Fastify](https://fastify.io/);
 - [Vitest](https://vitest.dev/);
 - [Prisma](https://prisma.io/);
@@ -490,6 +491,8 @@ Algumas das funcionalidades que devem ser implementadas em breve
 - [ ] Mudar a forma de autenticação da empresa do nome para o CNPJ, evitando assim que uma mesma empresa seja cadastrada com nomes diferentes por erro de digitação, ou que um usuário seja associado a uma empresa incorreta.
 - [ ] Implementação de uma ferramenta de coleta de dados, tipo [Datadog](https://www.datadoghq.com/) ou [Sentry](https://sentry.io/).
 - [ ] Integração com uma ferramenta de criação de documentação como [Swagger](https://swagger.io/).
+- [ ] Criar um novo template de email de confirmação.
+- [ ] Fazer o deploy da aplicação.
 
 <hr/>
 <br/>
