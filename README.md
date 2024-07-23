@@ -139,7 +139,7 @@ Essa tabela registra as empresas e se relaciona com a tabela de [User](#user)
 
 ### `Public Providers`
 
-Essa tabela registra as os provedores de e-mail públicos que não são permitidos para se registrar na aplicação
+Essa tabela registra as os provedores de e-mail públicos, e que não são permitidos para se registrar na aplicação
 
 **Properties**
   - `id`: 
@@ -159,7 +159,7 @@ Essa tabela registra as os provedores de e-mail públicos que não são permitid
 
 `http://{HOST}/users`
 
-Essa é uma rota do tipo `POST` onde recebe todos os dados do usuário no seu body e é feito o cadastro do usuário e da empresa, caso ela não exista.
+Essa é uma rota do tipo `POST` onde recebe todos os dados do usuário no seu body e é feito o cadastro do mesmo e da empresa, caso ela não exista.
 
 `body`
 ```JSON
@@ -179,17 +179,17 @@ Essa é uma rota do tipo `POST` onde recebe todos os dados do usuário no seu bo
 }
 ```
 
-> O no Back End tem uma validação se a empresa existe ou não e caso não exista uma nova é criada, caso já exista ela é associada ao usuário
+> O no Back End tem uma validação se a empresa existe ou não, e caso ela não exista uma nova é criada, caso já exista ela é associada ao usuário
 
-**🚨 Até o momento o único identificador da empresa está sendo feito pelo nome da mesma, futuramente essa validação / cadastro deveria ser feito pelo CNPJ evitando assim problemas de identificação e validação 🚨** 
+**🚨 Até o momento a única identificação da empresa está sendo feito pelo nome da mesma, futuramente essa validação / cadastro deveria ser feito pelo CNPJ, evitando assim problemas de identificação e validação 🚨** 
 
-Após o registo do usuário um e-mail com um token de validação é enviado para o usuário.
+Após o registo do usuário um e-mail com um token de validação é enviado para o email cadastrado.
 
 ### /validate  
 
 `http://{HOST}/validate`
 
-Essa é uma rota do tipo `POST` onde recebe o token de validação do usuário, ela no seu body.
+Essa é uma rota do tipo `POST` onde recebe o token de validação do usuário no seu body.
 
 O usuário só poderá se autenticar após essa validação.
 
@@ -205,7 +205,7 @@ O usuário só poderá se autenticar após essa validação.
 
 `http://{HOST}/sessions`
 
-Essa é uma rota do tipo `POST` para login e autenticação do usuário onde recebe o e-mail e password do usuário no seu body e retorna um token do tipo `JWT` que será usado para autenticação do usuário para as rotas autenticadas.
+Essa é uma rota do tipo `POST` para login e autenticação do usuário, onde recebe o e-mail e password no seu body e retorna um token do tipo `JWT` que será usado para autenticação do usuário para acessar as rotas autenticadas.
 
 `body`
 
@@ -229,7 +229,7 @@ Essa é uma rota do tipo `POST` para login e autenticação do usuário onde rec
 
 `http://{HOST}/profile`
 
-Essa é uma rota privada do tipo `GET` onde o o token enviado na rota `/sessions` deve ser indserido no header da requisição.
+Essa é uma rota privada do tipo `GET` onde o o token enviado na rota `/sessions` deve ser inserido no header da requisição.
 Essa rota retorna o perfil do usuário autenticado e os dados da empresa associada a ele
 
 
@@ -269,7 +269,7 @@ Essa rota retorna o perfil do usuário autenticado e os dados da empresa associa
 ### /providers 
 `http://{HOST}/providers`
 
-Essa é uma rota pública do tipo `GET` que retorna uma lista dos provedores que não são permitidos para cadastro do usuário na plataforma.
+Essa é uma rota pública do tipo `GET` que retorna uma lista com os provedores que não são permitidos para cadastro do usuário na plataforma.
 
 `response`
 
@@ -305,7 +305,7 @@ Essa é uma rota pública do tipo `GET` que retorna uma lista dos provedores que
 
 # 🏁 Executando o projeto
 
-1 - Para rodar pela primeira vez o seu projeto será necessário a criação de uma pasta.
+1 - Para rodar pela primeira vez o projeto será necessário a criação de uma pasta.
 
 ```bash
 $ mkdir <nome-da-pasta>
@@ -341,7 +341,7 @@ $ npm run start:dev
 ## 🐘 Configurando o seu banco de dados localmente
 
 Como dito anteriormente essa aplicação utiliza o banco de dados relacional PostgreSQL.
-Epara rodar localmente vamos utilizar o Docker como container
+E para rodar localmente vamos utilizar o Docker como container
 
 ### 🐳 Configurando o Docker
 
@@ -357,7 +357,7 @@ Com o Docker devidamente instalado basta executar o comoando a seguir na raiz do
 $ docker compose up -d
 ```
 
-A partir de agora o seu banco de daos já vai estar rodando em um container Docker
+A partir de agora o seu banco de dados já vai estar rodando em um container Docker
 
 Se tudo deu certo até aqui execute o comando a seguir e você verá o seu container rodando.
 
@@ -365,13 +365,13 @@ Se tudo deu certo até aqui execute o comando a seguir e você verá o seu conta
 $ docker ps -a
 ```
 
-Caso ele não esteja rodando vovê pode dar o start no seu container com o comando:
+Caso ele não esteja rodando você pode dar o start no seu container com o comando:
 
 ```bash
 $ docker start <id do container>
 ```
 
-E com o comando abaixo você decerá ver o seu container executando
+E com o comando abaixo você deverá ver o seu container executando
 
 ```bash
 $ docker ps
@@ -396,13 +396,15 @@ FRONTEND_URL="http://localhost:3000"
 JWT_SECRET="agidesk"
 ```
 
+> As variáveis `NODEMAILER_PASS` e `NODEMAILER_USER` são necessárias para o envio de email de validação do usuário. Elas correspondem ao endereço de que irá enviar oemail e o token de autenticação do mesmo, respectivamente. É importante lembrar que esse email precisar ser do provedor `Gmail`, podendo ser uma conta do tipo pública gratuita.
+
 ## Criando migrations e populando o Banco de Dados
 
 Para a conectar o projeto com o banco de dados foi utilizado o ORM [Prisma](https://prisma.io/).
 
 **🚨 Apenas lembrando que para executar as migrations e seeds o seu banco de dados deve estar rodando!! 📣**
 
-Para executar as `migrations` que irá criar as tabelas no banco de dados, na raiz do projeto execute o comando a seguir:
+Para executar as `migrations` que irão criar as tabelas no banco de dados, na raiz do projeto execute o comando a seguir:
 
 ```bash
 $ npx prisma migrate dev
@@ -418,6 +420,7 @@ $ npx prisma db seed
 ```
 
 Caso queira visualizar o seu banco de dados, o Prisma fornece uma plataforma que roda no browser para visualização.
+
 No terminal rode o seguinte comando
 
 ```bash
@@ -431,13 +434,7 @@ Uma nova guia irá abrir e você poderá visualizar o seu banco de dados.
 
 Foram implementados (Parcialmente) testes unitários e de integração (E2E) utilizando [vitest](https://vitest.dev/);
 
-Para executar os testes unitários basta executar os seguintes comandos na raiz do projeto backend:
-
-para ir para a raiz do projeto backend:
-
-```bash
-$ cd backend
-```
+Para executar os testes unitários basta executar os seguintes comandos na raiz do projeto:
 
 ```bash
 $ npm run test
@@ -445,7 +442,7 @@ $ npm run test
 
 Os detalhes do teste serão apresentados no seu console.
 
-Caso queira ver a cobertura dos testes executados rode o comando abaixo
+Caso queira ver a cobertura dos testes executados rode o comando abaixo.
 
 Será gerado automáticamente na raiz do seu projeto uma pasta chamada `coverage`. Dentro dessa pasta terá um arquivo `index.html` abra ele no seu browser e tenha acesso a mais detalhes dos testes executados.
 
@@ -453,7 +450,7 @@ Será gerado automáticamente na raiz do seu projeto uma pasta chamada `coverage
 $ npm run test:coverage
 ```
 
-Para executar os testes de integração (E2E) rode o comando abaixo
+Para executar os testes de integração (E2E) rode o comando abaixo.
 
 ```bash
 $ npm run test:e2e
@@ -463,7 +460,7 @@ Os detalhes do teste serão apresentados no seu console.
 
 <br/> 
 
-> Foi criado também uma pipeline de CI/CD no Github onde todo push os testes executam pelas GH actions, mais detalhes dessas actions estão na pasta `.github/workflows`
+> Foi criado também uma pipeline de CI/CD no Github, onde toda vez que um push é feito os testes são executados, mais detalhes dessas actions estão na pasta `.github/workflows`
 
 **🚨 Apenas lembrando que para executar os testes o projeto deve estar rodando!! 📣**
 
@@ -491,6 +488,8 @@ Algumas das funcionalidades que devem ser implementadas em breve
 - [ ] Criação de mais testes para cobrir todo o projeto
 - [ ] Criar uma rota do tipo `POST` para inserir providers externamente
 - [ ] Mudar a forma de autenticação da empresa do nome para o CNPJ, evitando assim que uma mesma empresa seja cadastrada com nomes diferentes por erro de digitação, ou que um usuário seja associado a uma empresa incorreta.
+- [ ] Implementação de uma ferramenta de coleta de dados, tipo [Datadog](https://www.datadoghq.com/) ou [Sentry](https://sentry.io/).
+- [ ] Integração com uma ferramenta de criação de documentação como [Swagger](https://swagger.io/).
 
 <hr/>
 <br/>
