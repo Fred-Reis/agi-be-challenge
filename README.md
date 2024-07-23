@@ -463,7 +463,7 @@ Os detalhes do teste serão apresentados no seu console.
 
 <br/> 
 
-Foi criado também uma pipeline de CI/CD no Github que todo push os testes executam pelas GH actions, mais detalhes dessas actions estão na pasta `.github/workflows`
+> Foi criado também uma pipeline de CI/CD no Github onde todo push os testes executam pelas GH actions, mais detalhes dessas actions estão na pasta `.github/workflows`
 
 **🚨 Apenas lembrando que para executar os testes o projeto deve estar rodando!! 📣**
 
