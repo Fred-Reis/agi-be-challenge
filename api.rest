@@ -16,6 +16,24 @@ content-type: application/json
 }
 
 ###
+POST https://agi-be-challenge.onrender.com/users
+content-type: application/json
+
+{
+    "email": "fred.kingstech@gmail.com",
+    "fullName": "asd",
+    "password": "asd",
+    "phoneNumber": "asd",
+    "role": "asd",
+    "fromWhere": "asd",
+    "companyName": "adsdds",
+    "companyField": "asdsa",
+    "companySize": "asdsa",
+    "department": ["asdsa", "asddd"],
+    "url": "asdsa"
+}
+
+###
 POST http://localhost:3333/sessions
 content-type: application/json
 
@@ -38,4 +56,4 @@ GET http://localhost:3333/providers
 
 ###
 GET http://localhost:3333/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMGY2ZjczMi00Yjk4LTRjZTItYmY4Mi01ZTAzMTk3N2RlZTEiLCJpYXQiOjE3MjE0MDE1MTl9.At5fU8s35BStPsKfNP599CphT-YbyooNz4zTuycVC2o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZDExOTY5Ni00MWQ3LTRkNTgtYTJjZi0wZGY0ODRmY2QxNDgiLCJpYXQiOjE3MjE2NzE2OTl9.awHEV-0Snud8rT1-iXzy7ENFriPSbMahLtr9DCm_Cj8
