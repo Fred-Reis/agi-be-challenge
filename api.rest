@@ -56,4 +56,4 @@ GET http://localhost:3333/providers
 
 ###
 GET http://localhost:3333/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZDExOTY5Ni00MWQ3LTRkNTgtYTJjZi0wZGY0ODRmY2QxNDgiLCJpYXQiOjE3MjE2NzE2OTl9.awHEV-0Snud8rT1-iXzy7ENFriPSbMahLtr9DCm_Cj8
+Authorization: Bearer 
